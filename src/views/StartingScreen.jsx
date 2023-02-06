@@ -14,7 +14,6 @@ const StartingScreen = () => {
                 </p>
                 <Button variant="outlined">Let's start the adventure!</Button>
                 <Link
-
                     rel="noopener"
                     href="https://reactjs.org"
                 >React документация</Link>
