@@ -2,6 +2,7 @@ import logo from "../assets/RaM_portal.png";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
+import {Link as RouterLink} from "react-router-dom";
 
 const StartingScreen = () => {
     return (
@@ -12,7 +13,7 @@ const StartingScreen = () => {
                     <Typography variant="h3">Время для Рика и Морти, бро!</Typography>
                     <Typography variant="h5">Oh, jeez...</Typography>
                 </p>
-                <Button variant="outlined">Let's start the adventure!</Button>
+                <RouterLink to="/app"><Button variant="outlined">Let's start the adventure!</Button></RouterLink>
                 <Link
                     rel="noopener"
                     href="https://reactjs.org"

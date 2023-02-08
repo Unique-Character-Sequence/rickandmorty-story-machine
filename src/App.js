@@ -1,7 +1,7 @@
 import './App.css';
-import StartingScreen from "./views/StartingScreen";
 import {Routes, Route} from 'react-router-dom';
 import MainPage from "./views/MainPage";
+import StartingScreen from "./views/StartingScreen";
 
 const App = () => (
     <>
@@ -15,8 +15,8 @@ const App = () => (
             />
         </head>
         <Routes>
-            <Route exact path="/" element=<StartingScreen/> />
-            <Route path="/app" element=<MainPage/> />
+            <Route exact path="/" element={<StartingScreen/>}/>
+            <Route path="/app" element={<MainPage/>}/>
         </Routes>
     </>
 );
