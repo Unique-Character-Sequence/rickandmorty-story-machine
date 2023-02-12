@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import RaM_portal_2 from '../assets/RaM_API_logo.png'
 import {Link as RouterLink} from "react-router-dom";
 import Button from "@mui/material/Button";
@@ -9,7 +9,7 @@ import Box from "@mui/material/Box";
 import {useTheme} from '@mui/material/styles';
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
-import {UsePaginationItem as log} from "@mui/material/usePagination/usePagination";
+import Typography from "@mui/material/Typography";
 
 const API_URL = "https://rickandmortyapi.com/api"
 
@@ -19,10 +19,14 @@ function randomNumberInRange(min, max) {
 }
 
 
-const getAPICharactersArray = () => {
+const getAPICharactersArray = (setImageUrl) => {
     const randomNum = randomNumberInRange(1, 826)
     axios.get(`${API_URL}/character/${randomNum}`)
         .then(response => {
+            const imageUrl = response.data.image
+            const name = response.data.name
+
+            setImageUrl(imageUrl)
             // Handle the successful response
             console.log(response.data);
         })
@@ -36,6 +40,12 @@ const getAPICharactersArray = () => {
 
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
+    const [imageUrlChar1, setImageUrlChar1] = useState([]);
+
+    useEffect(() => {
+        // Call the fetchImage function and pass the setImageUrl callback
+        getAPICharactersArray(setImageUrlChar1);
+    }, []);
     return (
         <Grid container spacing={1}>
             <Grid xs={12}>
@@ -48,8 +58,13 @@ const MainPage = () => {
                 </Box>
             </Grid>
             <Grid xs={12}>
+                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <img src={imageUrlChar1 ? imageUrlChar1 : ""} alt=""/>
+                </Box>
+            </Grid>
+            <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                    <Button onClick={getAPICharactersArray} variant="outlined">Generate</Button>
+                    <Button onClick={() => getAPICharactersArray(setImageUrlChar1)} variant="outlined">Generate</Button>
                 </Box>
             </Grid>
             <Grid xs={12}>
