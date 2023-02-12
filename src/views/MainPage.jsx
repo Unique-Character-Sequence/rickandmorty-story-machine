@@ -20,8 +20,10 @@ const MainPage = () => {
             </Grid>
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF", padding: useTheme().spacing(1)}}>
-                    Pick Your Character:
-                    Choosing between them
+                    <p>
+                        Pick Your Character: <br/>
+                        Choosing between them
+                    </p>
                 </Box>
             </Grid>
             <Grid xs={12}>

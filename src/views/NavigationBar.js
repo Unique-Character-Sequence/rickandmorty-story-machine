@@ -9,7 +9,7 @@ const styleCenter = {display: "flex", justifyContent: "center"};
 const NavigationBar = () => {
     return (
         <Box sx={{...styleCenter, backgroundColor: "#00A0FF"}}>
-            <RouterLink style={{width: "40%", ...styleCenter}} to="/">
+            <RouterLink style={styleCenter} to="/">
                 <img
                     style={{maxWidth: "70px", imageRendering: "-webkit-optimize-contrast"}}
                     src={RaM_portal_2} alt=""/>
