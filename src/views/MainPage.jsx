@@ -18,16 +18,16 @@ function randomNumberInRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-const getAPICharactersArray = (setImageUrl) => {
+const getAPICharactersArray = (setCharacter) => {
     const randomNum = randomNumberInRange(1, 826)
     axios.get(`${API_URL}/character/${randomNum}`)
         .then(response => {
-            const imageUrl = response.data.image
             const name = response.data.name
-
-            setImageUrl(imageUrl)
-            // Handle the successful response
+            const imageUrl = response.data.image
+            const species = response.data.species
+            const location = response.data.location.name
+            const character = {name, imageUrl, species, location} // instead of {image: image, name: name}
+            setCharacter(character)
             console.log(response.data);
         })
         .catch(error => {
@@ -36,35 +36,49 @@ const getAPICharactersArray = (setImageUrl) => {
         });
 }
 
-
-
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
-    const [imageUrlChar1, setImageUrlChar1] = useState([]);
+
+    const [character1, setCharacter1] = useState({});
+    const [character2, setCharacter2] = useState({});
+    const [character3, setCharacter3] = useState({});
 
     useEffect(() => {
         // Call the fetchImage function and pass the setImageUrl callback
-        getAPICharactersArray(setImageUrlChar1);
+        getAPICharactersArray(setCharacter1);
     }, []);
     return (
         <Grid container spacing={1}>
             <Grid xs={12}>
                 <NavigationBar style={styleCenter}/>
-            </Grid>
+            </Grid>-
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                        Pick Your Character: <br/>
-                        Choosing between them <br/>
+                    Pick Your Character: <br/>
+                    Choosing between them <br/>
                 </Box>
             </Grid>
             <Grid xs={12}>
+                {/*Character 1 card*/}
+
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <img src={imageUrlChar1 ? imageUrlChar1 : ""} alt=""/>
+                    <Typography variant="h6">{character1.name ? character1.name : ""}</Typography>
+                </Box>
+                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <img src={character1.imageUrl ? character1.imageUrl : ""} alt=""/>
+                </Box>
+
+                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <Typography variant="subtitle2">{character1.location ? `Location: ${character1.location}` : ""}</Typography>
+                </Box>
+                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <Typography variant="subtitle2">{character1.species ? `Species: ${character1.species}` : ""}</Typography>
                 </Box>
             </Grid>
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                    <Button onClick={() => getAPICharactersArray(setImageUrlChar1)} variant="outlined">Generate</Button>
+                    <Button onClick={() => getAPICharactersArray(setCharacter1)}
+                            variant="outlined">Generate</Button>
                 </Box>
             </Grid>
             <Grid xs={12}>
