@@ -10,6 +10,8 @@ import {useTheme} from '@mui/material/styles';
 import NavigationBar from "./NavigationBar";
 import axios from "axios";
 import Typography from "@mui/material/Typography";
+import CharacterCard from "./CharacterCard";
+import styles from './Card.module.css';
 
 const API_URL = "https://rickandmortyapi.com/api"
 
@@ -46,6 +48,8 @@ const MainPage = () => {
     useEffect(() => {
         // Call the fetchImage function and pass the setImageUrl callback
         getAPICharactersArray(setCharacter1);
+        getAPICharactersArray(setCharacter2);
+        getAPICharactersArray(setCharacter3);
     }, []);
     return (
         <Grid container spacing={1}>
@@ -58,26 +62,19 @@ const MainPage = () => {
                     Choosing between them <br/>
                 </Box>
             </Grid>
-            <Grid xs={12}>
+            <Grid className={styles.cardContainer} xs={12}>
                 {/*Character 1 card*/}
-
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography variant="h6">{character1.name ? character1.name : ""}</Typography>
-                </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <img src={character1.imageUrl ? character1.imageUrl : ""} alt=""/>
-                </Box>
-
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography variant="subtitle2">{character1.location ? `Location: ${character1.location}` : ""}</Typography>
-                </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography variant="subtitle2">{character1.species ? `Species: ${character1.species}` : ""}</Typography>
-                </Box>
+                <CharacterCard character={character1}/>
+                <CharacterCard character={character2}/>
+                <CharacterCard character={character3}/>
             </Grid>
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                    <Button onClick={() => getAPICharactersArray(setCharacter1)}
+                    <Button onClick={() => {
+                        getAPICharactersArray(setCharacter1)
+                        getAPICharactersArray(setCharacter2)
+                        getAPICharactersArray(setCharacter3)
+                    }}
                             variant="outlined">Generate</Button>
                 </Box>
             </Grid>
