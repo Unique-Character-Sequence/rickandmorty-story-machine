@@ -28,7 +28,8 @@ const getAPICharactersArray = (setCharacter) => {
             const imageUrl = response.data.image
             const species = response.data.species
             const location = response.data.location.name
-            const character = {name, imageUrl, species, location} // instead of {image: image, name: name}
+            const id = response.data.id
+            const character = {name, imageUrl, species, location, id} // instead of {image: image, name: name}
             setCharacter(character)
             console.log(response.data);
         })

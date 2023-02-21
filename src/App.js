@@ -2,6 +2,8 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import MainPage from "./views/MainPage";
 import StartingScreen from "./views/StartingScreen";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
     <>
@@ -14,6 +16,7 @@ const App = () => (
                 href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
             />
         </head>
+        <ToastContainer />
         <Routes>
             <Route exact path="/" element={<StartingScreen/>}/>
             <Route path="/app" element={<MainPage/>}/>

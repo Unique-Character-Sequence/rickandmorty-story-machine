@@ -9,7 +9,7 @@
     background-color: #118CAF;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     width: 275px;
     height: 385px;
     display: flex;
@@ -17,12 +17,23 @@
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
+    transition: transform 0.15s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95);
 }
 
 .card img {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .card h2 {
