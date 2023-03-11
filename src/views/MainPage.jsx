@@ -16,7 +16,7 @@ import styles from './Card.module.css';
 const API_URL = "https://rickandmortyapi.com/api"
 
 function randomNumberInRange(min, max) {
-    // 👇️ get number between min (inclusive) and max (inclusive)
+    // get number between min (inclusive) and max (inclusive)
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -59,8 +59,7 @@ const MainPage = () => {
             </Grid>-
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    Pick Your Character: <br/>
-                    Choosing between them <br/>
+                    <Typography variant="h6"> Pick Your Character:</Typography>
                 </Box>
             </Grid>
             <Grid className={styles.cardContainer} xs={12}>
