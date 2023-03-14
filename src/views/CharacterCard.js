@@ -6,26 +6,26 @@ import styles from './Card.module.css'
 import {toast} from 'react-toastify';
 import Button from "@mui/material/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {increment} from "../redux/counterSlice";
+import {increment, setPlayerCharacter} from "../redux/characterSlice";
 
 const styleCenter = {display: "flex", justifyContent: "center", padding: "8px", userSelect: "none"}
 const styleLeft = {display: "flex", justifyContent: "left", padding: "8px"}
 
-const handleClickToast = (p, dispatch) => {
-    toast.success(`You clicked ${p}`, {
+const handleClick = (character, dispatch) => {
+    toast.success(`You clicked ${character.name}`, {
         autoClose: 1500,
         position: toast.POSITION.TOP_RIGHT
     });
     dispatch(increment())
-    // dispatch(setPlayerCharacter())
+    dispatch(setPlayerCharacter(character))
 }
 
 const CharacterCard = (props) => {
-    const countNum = useSelector((state) => state.counter.value)
+    const countNum = useSelector((state) => state.character.value)
     const dispatch = useDispatch()
     console.log(props.character.id, props.character)
     return (
-        <div key={props.character.id} onClick={() => handleClickToast(props.character.name, dispatch)}>
+        <div key={props.character.id} onClick={() => handleClick(props.character, dispatch)}>
             <Box className={styles.card}>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
                     <Typography variant="h6">{props.character.name ? props.character.name : ""}</Typography>
@@ -41,10 +41,6 @@ const CharacterCard = (props) => {
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
                     <Typography
                         variant="subtitle2">{props.character.species ? `Species: ${props.character.species}` : ""}</Typography>
-                </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography
-                        variant="subtitle2">{countNum !== undefined ? `Species: ${countNum}` : ""}</Typography>
                 </Box>
             </Box>
         </div>

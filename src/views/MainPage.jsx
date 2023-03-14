@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import CharacterCard from "./CharacterCard";
 import styles from './Card.module.css';
 import getAPICharactersArray from "./ChoosingCharacter/getAPICharactersArray";
+import {useSelector} from "react-redux";
 
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
@@ -26,14 +27,18 @@ const MainPage = () => {
         getAPICharactersArray(setCharacter2);
         getAPICharactersArray(setCharacter3);
     }, []);
+    const characterName = useSelector((state) => state.character.character.name)
     return (
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
             <Grid xs={12}>
                 <NavigationBar style={styleCenter}/>
-            </Grid>-
+            </Grid>
             <Grid xs={12}>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography variant="h6"> Pick Your Character:</Typography>
+                    <Typography variant="h6">
+                        {characterName === undefined ? "Pick your character"
+                            : `You picked ${characterName}`}
+                    </Typography>
                 </Box>
             </Grid>
             <Grid className={styles.cardContainer} xs={12}>

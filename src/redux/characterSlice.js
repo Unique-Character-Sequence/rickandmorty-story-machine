@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     value: 0,
-    character:{
-        name:"Rick", location: "C-137", species:"Humanoid"
+    character: {
+
     }
 }
 
-export const counterSlice = createSlice({
-    name: 'counter',
+export const characterSlice = createSlice({
+    name: 'character',
     initialState,
     reducers: {
         increment: (state) => {
@@ -18,16 +18,16 @@ export const counterSlice = createSlice({
             // immutable state based off those changes
             state.value += 1
         },
-        decrement: (state) => {
-            state.value -= 1
-        },
         incrementByAmount: (state, action) => {
             state.value += action.payload
+        },
+        setPlayerCharacter: (state, action) => {
+            state.character = action.payload
         },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const {increment, incrementByAmount, setPlayerCharacter} = characterSlice.actions
 
-export default counterSlice.reducer
+export default characterSlice.reducer
