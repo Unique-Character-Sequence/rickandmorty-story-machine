@@ -12,13 +12,9 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import CharacterCard from "./CharacterCard";
 import styles from './Card.module.css';
+import randomNumberInRange from '../utils/randomNumberInRange'
 
 const API_URL = "https://rickandmortyapi.com/api"
-
-function randomNumberInRange(min, max) {
-    // get number between min (inclusive) and max (inclusive)
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 const getAPICharactersArray = (setCharacter) => {
     const randomNum = randomNumberInRange(1, 826)
