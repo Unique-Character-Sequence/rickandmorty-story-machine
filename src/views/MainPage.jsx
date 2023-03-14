@@ -8,32 +8,10 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Box from "@mui/material/Box";
 import {useTheme} from '@mui/material/styles';
 import NavigationBar from "./NavigationBar";
-import axios from "axios";
 import Typography from "@mui/material/Typography";
 import CharacterCard from "./CharacterCard";
 import styles from './Card.module.css';
-import randomNumberInRange from '../utils/randomNumberInRange'
-
-const API_URL = "https://rickandmortyapi.com/api"
-
-const getAPICharactersArray = (setCharacter) => {
-    const randomNum = randomNumberInRange(1, 826)
-    axios.get(`${API_URL}/character/${randomNum}`)
-        .then(response => {
-            const name = response.data.name
-            const imageUrl = response.data.image
-            const species = response.data.species
-            const location = response.data.location.name
-            const id = response.data.id
-            const character = {name, imageUrl, species, location, id} // instead of {image: image, name: name}
-            setCharacter(character)
-            console.log(response.data);
-        })
-        .catch(error => {
-            // Handle the error
-            console.error(error);
-        });
-}
+import getAPICharactersArray from "./ChoosingCharacter/getAPICharactersArray";
 
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};

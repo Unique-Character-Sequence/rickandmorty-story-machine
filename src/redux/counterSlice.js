@@ -2,6 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     value: 0,
+    character:{
+        name:"Rick", location: "C-137", species:"Humanoid"
+    }
 }
 
 export const counterSlice = createSlice({
