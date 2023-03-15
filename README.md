@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+<br/>
+<p align="center">
+  <a href="https://github.com/Unique-Character-Sequence/rickandmorty-story-machine">
+    <img src="https://github.com/Unique-Character-Sequence/rickandmorty-story-machine/blob/master/src/assets/RaM_API_logo.png?raw=true" alt="Logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">Rick and Morty Story Machine</h3>
 
-## Available Scripts
+  <p align="center">
+    Play DnD-inspired interdimensional stories with the touch of a button!
+    <br/>
+    <br/>
+    <a href="https://github.com/Unique-Character-Sequence/rickandmorty-story-machine">View Demo</a>
+    .
+  </p>
+</p>
 
-In the project directory, you can run:
+![Downloads](https://img.shields.io/github/downloads/Unique-Character-Sequence/rickandmorty-story-machine/total) ![Issues](https://img.shields.io/github/issues/Unique-Character-Sequence/rickandmorty-story-machine) ![License](https://img.shields.io/github/license/Unique-Character-Sequence/rickandmorty-story-machine) 
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screen Shot](https://i.imgur.com/pPhvhk6.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Rick and Morty Story Machine allows you to create your own unique DnD-like, Rick and Morty-inspired stories. Choose a randomized character or create your own, select some inventory items, and then make choices based on your character's stats or items to solve various situations. In the end, you will receive one possible ending for your story. Get creative and enter the world of Rick and Morty with the Story Machine!
 
-### `npm test`
+## Roadmap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DnD-inspired character creation: Users will create a character by selecting a race, class, and attributes such as strength, dexterity, intelligence, and charisma. These attributes will affect the story later on.
 
-### `npm run build`
+Inventory selection screen: After creating a character, users will be prompted to choose some starting items to add to their inventory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Dice rolls for decisions: When the user is presented with a situation, they can roll a virtual die to determine which choice they make. For example, if the user needs to choose between fighting or negotiating with an alien, they can roll a die to determine their approach.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Randomized events: During the story, random events could occur based on the user's character and inventory items. For example, a user with a laser gun in their inventory might encounter a group of hostile robots, or a user with a high intelligence attribute might discover a hidden laboratory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Story generation: Once the user has created their character and selected their inventory items, the story will be generated using pre-made stories. The user will be presented with various situations where they can make choices based on their character's attributes or inventory items.
 
-### `npm run eject`
+Combat system: For situations where the user needs to engage in combat, a simple turn-based combat system could be implemented. Users could roll a virtual die to determine their attack, and their opponent could roll a die to determine their defense.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Quests and rewards: Users could be given quests to complete during the story, and upon completion, they could earn rewards such as new inventory items or attribute increases.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Unlockable content: As the user progresses through the game, they could unlock new characters, items, and story options.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Achievements: The user could earn achievements for completing certain tasks or making certain decisions during the story.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Alternate endings: Depending on the user's choices throughout the story, they could unlock different endings. This would encourage the user to replay the game.
 
-## Learn More
+### Creating A Pull Request
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Pilici Rustam** - *Programming Student* - [Pilici Rustam](https://github.com/Unique-Character-Sequence/) - *Built Rick and Morty Story Machine*
