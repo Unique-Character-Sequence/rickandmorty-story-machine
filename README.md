@@ -10,8 +10,7 @@
     Play DnD-inspired interdimensional stories with the touch of a button!
     <br/>
     <br/>
-    <a href="https://github.com/Unique-Character-Sequence/rickandmorty-story-machine">View Demo</a>
-    .
+    <a href="https://rickandmorty-story-machine.netlify.app"><strong>View Demo</strong></a>
   </p>
 </p>
 
