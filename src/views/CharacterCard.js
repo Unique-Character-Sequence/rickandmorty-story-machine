@@ -9,7 +9,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {increment, setPlayerCharacter} from "../redux/characterSlice";
 
 const styleCenter = {display: "flex", justifyContent: "center", padding: "8px", userSelect: "none"}
-const styleLeft = {display: "flex", justifyContent: "left", padding: "8px"}
 
 const handleClick = (character, dispatch) => {
     toast.success(`You clicked ${character.name}`, {
