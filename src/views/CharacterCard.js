@@ -7,13 +7,19 @@ import {toast} from 'react-toastify';
 import Button from "@mui/material/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {increment, setPlayerCharacter} from "../redux/characterSlice";
+import {CharacterCreator} from "./CharacterCreator";
 
 const styleCenter = {display: "flex", justifyContent: "center", padding: "8px", userSelect: "none"}
 
 const handleClick = (character, dispatch) => {
     toast.success(`You clicked ${character.name}`, {
-        autoClose: 1500,
-        position: toast.POSITION.TOP_RIGHT
+        autoClose: 600,
+        pauseOnHover: false,
+        position: "top-right",
+        hideProgressBar: true,
+        closeOnClick: true,
+        draggable: false,
+        progress: undefined,
     });
     dispatch(increment())
     dispatch(setPlayerCharacter(character))
@@ -31,6 +37,9 @@ const CharacterCard = (props) => {
                 </Box>
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
                     <img src={props.character.imageUrl ? props.character.imageUrl : ""} alt=""/>
+                </Box>
+                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <CharacterCreator/>
                 </Box>
 
                 <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
