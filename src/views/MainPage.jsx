@@ -29,40 +29,42 @@ const MainPage = () => {
     }, []);
     const characterName = useSelector((state) => state.character.character.name)
     return (
-        <Grid container spacing={2}>
-            <Grid xs={12}>
-                <NavigationBar style={styleCenter}/>
+        <div style={{margin: 0, padding: 0}}>
+            <Grid container spacing={1}>
+                <Grid xs={12}>
+                    <NavigationBar style={styleCenter}/>
+                </Grid>
+                <Grid xs={12}>
+                    <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                        <Typography variant="h6">
+                            {characterName === undefined ? "Pick your character"
+                                : `You picked ${characterName}`}
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid className={styles.cardContainer} xs={12}>
+                    {/*Character 1 card*/}
+                    <CharacterCard character={character1}/>
+                    <CharacterCard character={character2}/>
+                    <CharacterCard character={character3}/>
+                </Grid>
+                <Grid xs={12}>
+                    <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
+                        <Button onClick={() => {
+                            getAPICharactersArray(setCharacter1)
+                            getAPICharactersArray(setCharacter2)
+                            getAPICharactersArray(setCharacter3)
+                        }}
+                                variant="outlined">Generate</Button>
+                    </Box>
+                </Grid>
+                <Grid xs={12}>
+                    <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
+                        <RouterLink to="/"><Button variant="outlined">Back</Button></RouterLink>
+                    </Box>
+                </Grid>
             </Grid>
-            <Grid xs={12}>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography variant="h6">
-                        {characterName === undefined ? "Pick your character"
-                            : `You picked ${characterName}`}
-                    </Typography>
-                </Box>
-            </Grid>
-            <Grid className={styles.cardContainer} xs={12}>
-                {/*Character 1 card*/}
-                <CharacterCard character={character1}/>
-                <CharacterCard character={character2}/>
-                <CharacterCard character={character3}/>
-            </Grid>
-            <Grid xs={12}>
-                <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                    <Button onClick={() => {
-                        getAPICharactersArray(setCharacter1)
-                        getAPICharactersArray(setCharacter2)
-                        getAPICharactersArray(setCharacter3)
-                    }}
-                            variant="outlined">Generate</Button>
-                </Box>
-            </Grid>
-            <Grid xs={12}>
-                <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                    <RouterLink to="/"><Button variant="outlined">Back</Button></RouterLink>
-                </Box>
-            </Grid>
-        </Grid>
+        </div>
     );
 };
 
