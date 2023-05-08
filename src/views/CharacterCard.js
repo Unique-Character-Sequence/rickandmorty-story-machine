@@ -33,13 +33,13 @@ const CharacterCard = (props) => {
     return (
         <div key={props.character.id} onClick={() => handleClick(props.character, dispatch)}>
             <Box className={styles.card}>
-                <Box sx={{...styleCenter}}>
+                <Box sx={styleCenter}>
                     <Typography variant="h6">{props.character.name ? props.character.name : ""}</Typography>
                 </Box>
-                <Box sx={{...styleCenter}}>
+                <Box sx={styleCenter}>
                     <img src={props.character.imageUrl ? props.character.imageUrl : ""} alt=""/>
                 </Box>
-                <Box sx={{...styleCenter}}>
+                <Box sx={styleCenter}>
                     <CharacterCreator/>
                 </Box>
                 <Box>
@@ -47,7 +47,7 @@ const CharacterCard = (props) => {
                         <Typography
                             variant="subtitle2">{props.character.location ? `Location: ${props.character.location}` : ""}</Typography>
                     </Box>
-                    <Box sx={{...styleCenter}}>
+                    <Box sx={styleCenter}>
                         <Typography
                             variant="subtitle2">{props.character.species ? `Species: ${props.character.species}` : ""}</Typography>
                     </Box>
