@@ -9,7 +9,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {increment, setPlayerCharacter} from "../redux/characterSlice";
 import {CharacterCreator} from "./CharacterCreator";
 
-const styleCenter = {display: "flex", justifyContent: "center", padding: "8px", userSelect: "none"}
+const styleCenter = {
+    display: "flex", justifyContent: "center", padding: "8px", userSelect: "none", textAlign: "right"}
 
 const handleClick = (character, dispatch) => {
     toast.success(`You clicked ${character.name}`, {
@@ -32,23 +33,24 @@ const CharacterCard = (props) => {
     return (
         <div key={props.character.id} onClick={() => handleClick(props.character, dispatch)}>
             <Box className={styles.card}>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                <Box sx={{...styleCenter}}>
                     <Typography variant="h6">{props.character.name ? props.character.name : ""}</Typography>
                 </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                <Box sx={{...styleCenter}}>
                     <img src={props.character.imageUrl ? props.character.imageUrl : ""} alt=""/>
                 </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                <Box sx={{...styleCenter}}>
                     <CharacterCreator/>
                 </Box>
-
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography
-                        variant="subtitle2">{props.character.location ? `Location: ${props.character.location}` : ""}</Typography>
-                </Box>
-                <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
-                    <Typography
-                        variant="subtitle2">{props.character.species ? `Species: ${props.character.species}` : ""}</Typography>
+                <Box>
+                    <Box sx={{...styleCenter, textAlign: "center"}}>
+                        <Typography
+                            variant="subtitle2">{props.character.location ? `Location: ${props.character.location}` : ""}</Typography>
+                    </Box>
+                    <Box sx={{...styleCenter}}>
+                        <Typography
+                            variant="subtitle2">{props.character.species ? `Species: ${props.character.species}` : ""}</Typography>
+                    </Box>
                 </Box>
             </Box>
         </div>
