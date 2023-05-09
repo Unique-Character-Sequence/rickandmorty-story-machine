@@ -20,6 +20,7 @@ const MainPage = () => {
     const [character1, setCharacter1] = useState({});
     const [character2, setCharacter2] = useState({});
     const [character3, setCharacter3] = useState({});
+    const [cardsToShow, setCardsToShow] = useState();
 
     useEffect(() => {
         // Call the fetchImage function and pass the setImageUrl callback
@@ -28,6 +29,7 @@ const MainPage = () => {
         getAPICharactersArray(setCharacter3);
     }, []);
     const characterName = useSelector((state) => state.character.character.name)
+    const pickedCharacter = useSelector((state) => state.character.character)
     return (
         <div style={{margin: 0, padding: 0}}>
             <Grid container spacing={1}>
@@ -43,7 +45,8 @@ const MainPage = () => {
                     </Box>
                 </Grid>
                 <Grid className={styles.cardContainer} xs={12}>
-                    {/*Character 1 card*/}
+                    {Object.keys(pickedCharacter).length !== 0 ?
+                        <CharacterCard character={pickedCharacter}/> : ""}
                     <CharacterCard character={character1}/>
                     <CharacterCard character={character2}/>
                     <CharacterCard character={character3}/>
