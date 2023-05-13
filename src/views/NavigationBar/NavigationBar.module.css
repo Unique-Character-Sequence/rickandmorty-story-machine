@@ -1,0 +1,11 @@
+.box {
+}
+
+.box img {
+    max-width: 70px;
+    padding: 4px;
+}
+
+.userPfp {
+    border-radius: 8px
+}

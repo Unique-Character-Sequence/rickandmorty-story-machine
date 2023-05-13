@@ -7,12 +7,13 @@ import Container from "@mui/material/Container";
 import Grid from '@mui/material/Unstable_Grid2';
 import Box from "@mui/material/Box";
 import {useTheme} from '@mui/material/styles';
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "./NavigationBar/NavigationBar";
 import Typography from "@mui/material/Typography";
 import CharacterCard from "./CharacterCard";
 import styles from './Card.module.css';
 import getAPICharactersArray from "./ChoosingCharacter/getAPICharactersArray";
 import {useSelector} from "react-redux";
+import NavigationBar_Container from "./NavigationBar/NavigationBar_Container";
 
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
@@ -34,7 +35,7 @@ const MainPage = () => {
         <div style={{margin: 0, padding: 0}}>
             <Grid container spacing={1}>
                 <Grid xs={12}>
-                    <NavigationBar style={styleCenter}/>
+                    <NavigationBar_Container/>
                 </Grid>
                 <Grid xs={12}>
                     <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
