@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     value: 0,
-    character: {
+    characterObj: {
 
     }
 }
@@ -22,7 +22,7 @@ export const characterSlice = createSlice({
             state.value += action.payload
         },
         setPlayerCharacter: (state, action) => {
-            state.character = action.payload
+            state.characterObj = action.payload
         },
     },
 })

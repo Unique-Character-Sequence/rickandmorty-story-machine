@@ -10,7 +10,8 @@ import {increment, setPlayerCharacter} from "../redux/characterSlice";
 import {CharacterCreator} from "./CharacterCreator";
 
 const styleCenter = {
-    display: "flex", justifyContent: "center", padding: "8px", userSelect: "none", textAlign: "right"}
+    display: "flex", justifyContent: "center", padding: "8px", userSelect: "none", textAlign: "right"
+}
 
 const handleClick = (character, dispatch) => {
     toast.success(`You clicked ${character.name}`, {
@@ -39,9 +40,13 @@ const CharacterCard = (props) => {
                 <Box sx={styleCenter}>
                     <img src={props.character.imageUrl ? props.character.imageUrl : ""} alt=""/>
                 </Box>
-                <Box sx={styleCenter}>
-                    <CharacterCreator/>
-                </Box>
+                {
+                    props.card_type === "choose_stats" ?
+                        <Box sx={styleCenter}>
+                            <CharacterCreator/>
+                        </Box>
+                        : ""
+                }
                 <Box>
                     <Box sx={{...styleCenter, textAlign: "center"}}>
                         <Typography

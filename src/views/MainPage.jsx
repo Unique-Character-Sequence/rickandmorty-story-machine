@@ -28,8 +28,8 @@ const MainPage = () => {
         getAPICharactersArray(setCharacter2);
         getAPICharactersArray(setCharacter3);
     }, []);
-    const characterName = useSelector((state) => state.character.character.name)
-    const pickedCharacter = useSelector((state) => state.character.character)
+    const characterName = useSelector((state) => state.character.characterObj.name)
+    const pickedCharacter = useSelector((state) => state.character.characterObj)
     return (
         <div style={{margin: 0, padding: 0}}>
             <Grid container spacing={1}>
@@ -45,11 +45,13 @@ const MainPage = () => {
                     </Box>
                 </Grid>
                 <Grid className={styles.cardContainer} xs={12}>
-                    {Object.keys(pickedCharacter).length !== 0 ?
-                        <CharacterCard character={pickedCharacter}/> : ""}
                     <CharacterCard character={character1}/>
                     <CharacterCard character={character2}/>
                     <CharacterCard character={character3}/>
+                </Grid>
+                <Grid className={styles.cardContainer} xs={12}>
+                    {Object.keys(pickedCharacter).length !== 0 ?
+                        <CharacterCard card_type="choose_stats" character={pickedCharacter}/> : ""}
                 </Grid>
                 <Grid xs={12}>
                     <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
