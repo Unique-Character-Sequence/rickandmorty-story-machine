@@ -11,26 +11,16 @@ import NavigationBar from "./NavigationBar/NavigationBar";
 import Typography from "@mui/material/Typography";
 import CharacterCard from "./CharacterCard";
 import styles from './Card.module.css';
-import getAPICharactersArray from "./ChoosingCharacter/getAPICharactersArray";
+import getCharactersArray_API from "./ChoosingCharacter/getCharactersArray_API";
 import {useSelector} from "react-redux";
 import NavigationBar_Container from "./NavigationBar/NavigationBar_Container";
+import ChoosingCharacterPage from "./ChoosingCharacter/ChoosingCharacterPage";
+import ChoosingCharacterPage_Container from "./ChoosingCharacter/ChoosingCharacterPage_Container";
 
 const MainPage = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
 
-    const [character1, setCharacter1] = useState({});
-    const [character2, setCharacter2] = useState({});
-    const [character3, setCharacter3] = useState({});
-    const [cardsToShow, setCardsToShow] = useState();
-
-    useEffect(() => {
-        // Call the fetchImage function and pass the setImageUrl callback
-        getAPICharactersArray(setCharacter1);
-        getAPICharactersArray(setCharacter2);
-        getAPICharactersArray(setCharacter3);
-    }, []);
     const characterName = useSelector((state) => state.character.characterObj.name)
-    const pickedCharacter = useSelector((state) => state.character.characterObj)
     return (
         <div style={{margin: 0, padding: 0}}>
             <Grid container spacing={1}>
@@ -45,24 +35,8 @@ const MainPage = () => {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid className={styles.cardContainer} xs={12}>
-                    <CharacterCard character={character1}/>
-                    <CharacterCard character={character2}/>
-                    <CharacterCard character={character3}/>
-                </Grid>
-                <Grid className={styles.cardContainer} xs={12}>
-                    {Object.keys(pickedCharacter).length !== 0 ?
-                        <CharacterCard card_type="choose_stats" character={pickedCharacter}/> : ""}
-                </Grid>
                 <Grid xs={12}>
-                    <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
-                        <Button onClick={() => {
-                            getAPICharactersArray(setCharacter1)
-                            getAPICharactersArray(setCharacter2)
-                            getAPICharactersArray(setCharacter3)
-                        }}
-                                variant="outlined">Generate</Button>
-                    </Box>
+                    <ChoosingCharacterPage_Container/>
                 </Grid>
                 <Grid xs={12}>
                     <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>

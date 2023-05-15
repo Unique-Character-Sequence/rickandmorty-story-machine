@@ -1,8 +1,10 @@
 import {useState} from "react";
 import {CharacterCreator} from "./CharacterCreator";
+import {getPointCost} from "../../utils/getPointCost";
 
 export const CharacterCreator_Container = () => {
     const [race, setRace] = useState("");
+    const [pointsSpent , setPointsSpent] = useState(0);
     const [gameClass, setGameClass] = useState("");
     const [constitution, setConstitution] = useState(10);
     const [strength, setStrength] = useState(10);
@@ -16,6 +18,8 @@ export const CharacterCreator_Container = () => {
     };
 
     const handleAttributeChange = (attribute, value) => {
+        console.log(getPointCost(12))
+
         const statLimitCheck = (stat, value) =>
             (stat + value >= 3 && stat + value <= 18) ? stat + value : stat;
         switch (attribute) {

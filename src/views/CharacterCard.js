@@ -30,7 +30,7 @@ const handleClick = (character, dispatch) => {
 const CharacterCard = (props) => {
     const countNum = useSelector((state) => state.character.value)
     const dispatch = useDispatch()
-    console.log(props.character.id, props.character)
+    // console.log(props.character.id, props.character)
     return (
         <div key={props.character.id} onClick={() => handleClick(props.character, dispatch)}>
             <Box className={styles.card}>

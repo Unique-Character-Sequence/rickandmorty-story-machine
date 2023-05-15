@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = "https://rickandmortyapi.com/api"
 
-const getAPICharactersArray = (setCharacter) => {
+const getCharactersArray_API = (setCharacter) => {
     const randomNum = randomNumberInRange(1, 826)
     axios.get(`${API_URL}/character/${randomNum}`)
         .then(response => {
@@ -22,4 +22,4 @@ const getAPICharactersArray = (setCharacter) => {
         });
 }
 
-export default getAPICharactersArray
+export default getCharactersArray_API
