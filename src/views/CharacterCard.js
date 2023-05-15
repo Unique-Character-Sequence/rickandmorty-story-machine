@@ -7,7 +7,7 @@ import {toast} from 'react-toastify';
 import Button from "@mui/material/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {increment, setPlayerCharacter} from "../redux/characterSlice";
-import {CharacterCreator} from "./CharacterCreator";
+import {CharacterCreator_Container} from "./CharacterCreator/CharacterCreator_Container";
 
 const styleCenter = {
     display: "flex", justifyContent: "center", padding: "8px", userSelect: "none", textAlign: "right"
@@ -43,7 +43,7 @@ const CharacterCard = (props) => {
                 {
                     props.card_type === "choose_stats" ?
                         <Box sx={styleCenter}>
-                            <CharacterCreator/>
+                            <CharacterCreator_Container/>
                         </Box>
                         : ""
                 }
