@@ -23,7 +23,7 @@ const ChoosingCharacterPage = (props) => {
                         <CharacterCard card_type="choose_stats" character={props.pickedCharacter}/> : ""}
                 </Box>
                 <Box>
-                    <Box sx={{...props.styleCenter, backgroundColor: "#B6BCDE"}}>
+                    <Box sx={{...props.styleCenter, marginTop: "1vw"}}>
                         <Button onClick={() => {
                             getCharactersArray_API(props.setCharacter1)
                             getCharactersArray_API(props.setCharacter2)

@@ -1,12 +1,12 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
-import MainPage from "./views/MainPage";
+import MainPage from "./views/MainPage/MainPage";
 import StartingScreen from "./views/StartingScreen";
 import {ToastContainer, Flip} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => (
-    <>
+    <div>
         <head>
             <title>qe</title>
             <meta name="viewport" content="initial-scale=1, width=device-width"/>
@@ -26,7 +26,7 @@ const App = () => (
             <Route exact path="/" element={<StartingScreen/>}/>
             <Route path="/app" element={<MainPage/>}/>
         </Routes>
-    </>
+    </div>
 );
 
 

@@ -1,4 +1,7 @@
 import AbilityScore from "./AbilityScore";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import React from "react";
 
 export const CharacterCreator = (props) => {
     return (
@@ -48,6 +51,8 @@ export const CharacterCreator = (props) => {
                 attribute="wis"
                 handleAttributeChange={props.handleAttributeChange}
             />
+            <Typography variant="h2">Fix 27 points limit</Typography>
+
         </div>
     );
 };

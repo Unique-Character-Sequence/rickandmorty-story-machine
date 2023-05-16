@@ -4,11 +4,14 @@ import Box from "@mui/material/Box";
 import {useTheme} from '@mui/material/styles';
 import Typography from "@mui/material/Typography";
 import {useSelector} from "react-redux";
-import NavigationBar_Container from "./NavigationBar/NavigationBar_Container";
-import ChoosingCharacterPage_Container from "./ChoosingCharacter/ChoosingCharacterPage_Container";
+import NavigationBar_Container from "../NavigationBar/NavigationBar_Container";
+import ChoosingCharacterPage_Container from "../ChoosingCharacter/ChoosingCharacterPage_Container";
 
 const MainPage = () => {
-    const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
+    const styleCenter = {
+        display: "flex", justifyContent: "center",
+        padding: useTheme().spacing(), marginTop: useTheme().spacing(1)
+    };
 
     const characterName = useSelector((state) => state.character.characterObj.name)
     return (
