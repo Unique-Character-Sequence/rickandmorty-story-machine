@@ -7,13 +7,7 @@ import {useSelector} from "react-redux";
 import NavigationBar_Container from "../NavigationBar/NavigationBar_Container";
 import ChoosingCharacterPage_Container from "../ChoosingCharacter/ChoosingCharacterPage_Container";
 
-const MainPage = () => {
-    const styleCenter = {
-        display: "flex", justifyContent: "center",
-        padding: useTheme().spacing(), marginTop: useTheme().spacing(1)
-    };
-
-    const characterName = useSelector((state) => state.character.characterObj.name)
+const MainPage = (props) => {
     return (
         <Box sx={{maxWidth: "auto", margin: 0, padding: 0}}>
             <Box>
@@ -21,18 +15,18 @@ const MainPage = () => {
                     <NavigationBar_Container/>
                 </Box>
                 <Box>
-                    <Box sx={{...styleCenter, backgroundColor: "#118CAF"}}>
+                    <Box sx={{...props.styleCenter, backgroundColor: "#118CAF"}}>
                         <Typography variant="h6">
-                            {characterName === undefined ? "Pick your character"
-                                : `You picked ${characterName}`}
+                            {props.characterName === undefined ? "Pick your character"
+                                : `You picked ${props.characterName}`}
                         </Typography>
                     </Box>
                 </Box>
                 <Box>
-                    <ChoosingCharacterPage_Container/>
+                    {props.stageComponent}
                 </Box>
                 <Box>
-                    <Box sx={{...styleCenter, backgroundColor: "#B6BCDE"}}>
+                    <Box sx={{...props.styleCenter, backgroundColor: "#B6BCDE"}}>
                         <RouterLink to="/"><Button variant="outlined">Back</Button></RouterLink>
                     </Box>
                 </Box>

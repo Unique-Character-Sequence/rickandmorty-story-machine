@@ -6,7 +6,7 @@ import styles from './Card.module.css'
 import {toast} from 'react-toastify';
 import Button from "@mui/material/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {increment, setPlayerCharacter} from "../redux/characterSlice";
+import {increment, setPlayerCharacter} from "../redux/character_Slice";
 import {CharacterCreator_Container} from "./CharacterCreator/CharacterCreator_Container";
 
 const styleCenter = {
@@ -24,6 +24,7 @@ const handleClick = (character, dispatch) => {
         progress: undefined,
     });
     dispatch(increment())
+
     dispatch(setPlayerCharacter(character))
 }
 

@@ -7,7 +7,7 @@ const initialState = {
     }
 }
 
-export const characterSlice = createSlice({
+export const character_Slice = createSlice({
     name: 'character',
     initialState,
     reducers: {
@@ -28,6 +28,6 @@ export const characterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const {increment, incrementByAmount, setPlayerCharacter} = characterSlice.actions
+export const {increment, incrementByAmount, setPlayerCharacter} = character_Slice.actions
 
-export default characterSlice.reducer
+export default character_Slice.reducer

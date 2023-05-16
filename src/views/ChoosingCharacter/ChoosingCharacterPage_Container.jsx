@@ -9,7 +9,6 @@ const ChoosingCharacterPageContainer = props => {
     const [character1, setCharacter1] = useState({});
     const [character2, setCharacter2] = useState({});
     const [character3, setCharacter3] = useState({});
-    const [cardsToShow, setCardsToShow] = useState();
 
     useEffect(() => {
         // Call the fetchImage function and pass the setImageUrl callback
@@ -17,7 +16,6 @@ const ChoosingCharacterPageContainer = props => {
         getCharactersArray_API(setCharacter2);
         getCharactersArray_API(setCharacter3);
     }, []);
-    const characterName = useSelector((state) => state.character.characterObj.name)
     const pickedCharacter = useSelector((state) => state.character.characterObj)
 
     return (
