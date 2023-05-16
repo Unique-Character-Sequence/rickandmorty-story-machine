@@ -7,21 +7,22 @@ import styles from "../Card.module.css";
 import CharacterCard from "../CharacterCard";
 import Button from "@mui/material/Button";
 import getCharactersArray_API from "./getCharactersArray_API";
+import Container from "@mui/material/Container";
 
 const ChoosingCharacterPage = (props) => {
     return (
         <div>
-            <Grid container spacing={1}>
-                <Grid className={styles.cardContainer} xs={12}>
+            <div>
+                <Box className={styles.cardContainer}>
                     <CharacterCard character={props.character1}/>
                     <CharacterCard character={props.character2}/>
                     <CharacterCard character={props.character3}/>
-                </Grid>
-                <Grid className={styles.cardContainer} xs={12}>
+                </Box>
+                <Box className={styles.cardContainer}>
                     {Object.keys(props.pickedCharacter).length !== 0 ?
                         <CharacterCard card_type="choose_stats" character={props.pickedCharacter}/> : ""}
-                </Grid>
-                <Grid xs={12}>
+                </Box>
+                <Box>
                     <Box sx={{...props.styleCenter, backgroundColor: "#B6BCDE"}}>
                         <Button onClick={() => {
                             getCharactersArray_API(props.setCharacter1)
@@ -30,8 +31,8 @@ const ChoosingCharacterPage = (props) => {
                         }}
                                 variant="outlined">Generate</Button>
                     </Box>
-                </Grid>
-            </Grid>
+                </Box>
+            </div>
         </div>
     );
 };
