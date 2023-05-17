@@ -1,11 +1,8 @@
 import {Link as RouterLink} from "react-router-dom";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import {useTheme} from '@mui/material/styles';
 import Typography from "@mui/material/Typography";
-import {useSelector} from "react-redux";
 import NavigationBar_Container from "../NavigationBar/NavigationBar_Container";
-import ChoosingCharacterPage_Container from "../ChoosingCharacter/ChoosingCharacterPage_Container";
 
 const MainPage = (props) => {
     return (

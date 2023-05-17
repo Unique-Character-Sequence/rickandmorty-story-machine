@@ -1,33 +1,38 @@
 import {useEffect, useState} from "react";
 import getCharactersArray_API from "./getCharactersArray_API";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import ChoosingCharacterPage from "./ChoosingCharacterPage";
 import {useTheme} from "@mui/material/styles";
+import {setStage} from "../../redux/mainPage_Slice";
 
-const ChoosingCharacterPageContainer = props => {
+const ChoosingCharacterPageContainer = () => {
     const styleCenter = {display: "flex", justifyContent: "center", padding: useTheme().spacing()};
     const [character1, setCharacter1] = useState({});
     const [character2, setCharacter2] = useState({});
     const [character3, setCharacter3] = useState({});
+    const generateNewCharacters = () => {
+        getCharactersArray_API(setCharacter1)
+        getCharactersArray_API(setCharacter2)
+        getCharactersArray_API(setCharacter3)
+    }
 
     useEffect(() => {
-        // Call the fetchImage function and pass the setImageUrl callback
-        getCharactersArray_API(setCharacter1);
-        getCharactersArray_API(setCharacter2);
-        getCharactersArray_API(setCharacter3);
+        generateNewCharacters()
     }, []);
     const pickedCharacter = useSelector((state) => state.character.characterObj)
-
+    const dispatch = useDispatch();
+    const handleStageChange = (newStage) => {
+        dispatch(setStage(newStage));
+    };
     return (
         <ChoosingCharacterPage
+            handleStageChange={handleStageChange}
+            generateNewCharacters={generateNewCharacters}
             styleCenter={styleCenter}
             pickedCharacter={pickedCharacter}
             character1={character1}
-            setCharacter1={setCharacter1}
             character2={character2}
-            setCharacter2={setCharacter2}
-            character3={character3}
-            setCharacter3={setCharacter3}/>
+            character3={character3}/>
     );
 };
 
