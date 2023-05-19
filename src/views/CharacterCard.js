@@ -35,7 +35,7 @@ const CharacterCard = (props) => {
     return (
         <div key={props.character.id} onClick={() => handleClick(props.character, dispatch)}>
             <Box className={styles.card}>
-                <Box sx={styleCenter}>
+                <Box sx={{...styleCenter, height: "4rem", alignItems : "center"}}>
                     <Typography variant="h6">{props.character.name ? props.character.name : ""}</Typography>
                 </Box>
                 <Box sx={styleCenter}>
