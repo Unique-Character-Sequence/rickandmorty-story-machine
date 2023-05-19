@@ -19,11 +19,13 @@ const ChoosingCharacterPage = (props) => {
                         props.generateNewCharacters()
                     }}
                             variant="outlined">Give me others!</Button>
-                    {}
-                    <Button sx={{width: "18vw", marginLeft: "1.5vw"}} onClick={() => {
-                        props.handleStageChange(2)
-                    }}
-                             variant="contained">Next</Button>
+
+                    <Button disabled={Object.keys(props.pickedCharacter).length === 0}
+                            sx={{width: "18vw", marginLeft: "1.5vw"}}
+                            onClick={() => {
+                                props.handleStageChange(2)
+                            }}
+                            variant="contained">Next</Button>
                 </Box>
             </Box>
         </Box>
