@@ -22,11 +22,6 @@ const MainPage = (props) => {
                 <Box>
                     {props.stageComponent}
                 </Box>
-                <Box>
-                    <Box sx={{...props.styleCenter, backgroundColor: "#B6BCDE"}}>
-                        <RouterLink to="/"><Button variant="outlined">Back</Button></RouterLink>
-                    </Box>
-                </Box>
             </Box>
         </Box>
     );

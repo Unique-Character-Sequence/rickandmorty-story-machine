@@ -7,6 +7,7 @@ import ChoosingCharacterPage_Container from "../ChoosingCharacter/ChoosingCharac
 import CharacterCard from "../CharacterCard";
 import styles from "../Card.module.css";
 import Box from "@mui/material/Box";
+import CharacterBuilder from "../CharacterBuilder/CharacterBuilder";
 
 const MainPage_Container = () => {
     const stage = useSelector((state) => state.mainPage.stage);
@@ -29,9 +30,7 @@ const MainPage_Container = () => {
         case 2:
             return <MainPage
                 characterName={characterName} styleCenter={styleCenter}
-                stageComponent={<Box className={styles.cardContainer}>
-                    <CharacterCard card_type="choose_stats" character={pickedCharacter}/>
-                    </Box>}
+                stageComponent={<CharacterBuilder/>}
             />;
         // Add more cases for different stages...
         default:
