@@ -4,24 +4,25 @@ import styles from "../Card.module.css";
 import CharacterCard from "../CharacterCard";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import {height} from "@mui/system";
 
 const ChoosingCharacterPage = (props) => {
     return (
-        <Box sx={{marginTop: "5vh"}}>
+        <Box sx={{marginTop: "8vh"}}>
             <Box className={styles.cardContainer}>
                 <CharacterCard character={props.character1}/>
                 <CharacterCard character={props.character2}/>
                 <CharacterCard character={props.character3}/>
             </Box>
-            <Box>
-                <Box sx={{...props.styleCenter, marginTop: "1vw"}}>
+            <Box sx={{marginTop: "11vh", height: "10vh", backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
+                <Box sx={{...props.styleCenter}}>
                     <Button sx={{width: "18vw"}} onClick={() => {
                         props.generateNewCharacters()
                     }}
-                            variant="outlined">Give me others!</Button>
+                            variant="contained">Give me others!</Button>
 
                     <Button disabled={Object.keys(props.pickedCharacter).length === 0}
-                            sx={{width: "18vw", marginLeft: "1.5vw"}}
+                            sx={{width: "18vw", height: "6vh", marginLeft: "3.5vw"}}
                             onClick={() => {
                                 props.handleStageChange(2)
                             }}
