@@ -3,16 +3,14 @@ import Box from "@mui/material/Box";
 import styles from "../Card.module.css";
 import CharacterCard from "../CharacterCard";
 import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import {height} from "@mui/system";
 
 const ChoosingCharacterPage = (props) => {
     return (
         <Box sx={{marginTop: "8vh"}}>
             <Box className={styles.cardContainer}>
-                <CharacterCard character={props.character1}/>
-                <CharacterCard character={props.character2}/>
-                <CharacterCard character={props.character3}/>
+                <CharacterCard style={styles.card1} character={props.character1}/>
+                <CharacterCard style={styles.card2} character={props.character2}/>
+                <CharacterCard style={styles.card3} character={props.character3}/>
             </Box>
             <Box sx={{marginTop: "11vh", height: "10vh", backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
                 <Box sx={{...props.styleCenter}}>
