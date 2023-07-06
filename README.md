@@ -10,7 +10,7 @@
     Play DnD-inspired interdimensional stories with the touch of a button!
     <br/>
     <br/>
-    <a href="https://rickandmorty-story-machine.netlify.app"><strong>View Demo</strong></a>
+    <a href="https://rickandmorty-story-machine.netlify.app"><img src="https://img.shields.io/badge/-View Live Demo-2B9348?style=for-the-badge" alt="View Working Demo"/></a>
   </p>
 </p>
 
